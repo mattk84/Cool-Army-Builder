@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  base_cost: 1
+  unit_type_id: 1
+  faction_id: 1
+  model_count: 1
+
+two:
+  name: MyString
+  description: MyText
+  base_cost: 1
+  unit_type_id: 1
+  faction_id: 1
+  model_count: 1

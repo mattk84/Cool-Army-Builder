@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140811034920) do
+ActiveRecord::Schema.define(version: 20140811044404) do
 
   create_table "factions", force: true do |t|
     t.string   "name"
@@ -20,5 +20,16 @@ ActiveRecord::Schema.define(version: 20140811034920) do
   end
 
   add_index "factions", ["name"], name: "index_factions_on_name", unique: true
+
+  create_table "units", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "base_cost"
+    t.integer  "unit_type_id"
+    t.integer  "faction_id"
+    t.integer  "model_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
