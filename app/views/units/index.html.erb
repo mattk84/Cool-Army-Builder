@@ -4,7 +4,6 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Description</th>
       <th>Base cost</th>
       <th>Unit type</th>
       <th>Faction</th>
@@ -19,10 +18,9 @@
     <% @units.each do |unit| %>
       <tr>
         <td><%= unit.name %></td>
-        <td><%= unit.description %></td>
         <td><%= unit.base_cost %></td>
-        <td><%= unit.unit_type_id %></td>
-        <td><%= unit.faction_id %></td>
+        <td><%= unit.unit_type ? unit.unit_type.name : '' %></td>
+        <td><%= unit.faction ? unit.faction.name : '' %></td>
         <td><%= unit.model_count %></td>
         <td><%= link_to 'Show', unit %></td>
         <td><%= link_to 'Edit', edit_unit_path(unit) %></td>

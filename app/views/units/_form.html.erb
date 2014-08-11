@@ -24,12 +24,12 @@
     <%= f.number_field :base_cost %>
   </div>
   <div class="field">
-    <%= f.label :unit_type_id %><br>
-    <%= f.number_field :unit_type_id %>
+    <%= f.label :unit_type %><br>
+    <%= f.select :unit_type_id, options_for_select(UnitType.all.collect { |ut| [ut.name, ut.id] }, @unit.unit_type_id) %>
   </div>
   <div class="field">
     <%= f.label :faction_id %><br>
-    <%= f.number_field :faction_id %>
+    <%= f.select :faction_id, options_for_select(Faction.all.collect { |f| [f.name, f.id] }, @unit.faction_id) %>
   </div>
   <div class="field">
     <%= f.label :model_count %><br>

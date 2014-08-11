@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140811044404) do
+ActiveRecord::Schema.define(version: 20140811051438) do
 
   create_table "factions", force: true do |t|
     t.string   "name"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 20140811044404) do
   end
 
   add_index "factions", ["name"], name: "index_factions_on_name", unique: true
+
+  create_table "unit_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "unit_types", ["name"], name: "index_unit_types_on_name", unique: true
 
   create_table "units", force: true do |t|
     t.string   "name"
