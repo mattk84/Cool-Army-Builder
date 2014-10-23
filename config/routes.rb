@@ -1,4 +1,8 @@
 ArmyBuilder::Application.routes.draw do
+  resources :armies
+
+  resources :army_units
+
   resources :unit_types
 
   resources :units

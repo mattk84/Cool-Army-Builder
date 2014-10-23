@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140811051438) do
+ActiveRecord::Schema.define(version: 20141023054133) do
+
+  create_table "armies", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "army_units", force: true do |t|
+    t.integer  "unit_id"
+    t.integer  "army_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "army_units", ["army_id"], name: "index_army_units_on_army_id"
+  add_index "army_units", ["unit_id"], name: "index_army_units_on_unit_id"
 
   create_table "factions", force: true do |t|
     t.string   "name"

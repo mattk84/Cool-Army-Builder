@@ -1,0 +1,25 @@
+<%= form_for(@army_unit) do |f| %>
+  <% if @army_unit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@army_unit.errors.count, "error") %> prohibited this army_unit from being saved:</h2>
+
+      <ul>
+      <% @army_unit.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :unit %><br>
+    <%= f.select :unit_id, options_for_select(Unit.all.collect { |u| [u.name, u.id] }, @army_unit.unit_id) %>
+  </div>
+  <div class="field">
+    <%= f.label :army %><br>
+    <%= f.select :army_id, options_for_select(Army.all.collect { |a| [a.name, a.id] }, @army_unit.army_id) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

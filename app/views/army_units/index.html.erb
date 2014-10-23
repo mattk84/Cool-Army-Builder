@@ -1,0 +1,29 @@
+<h1>Listing army_units</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Unit</th>
+      <th>Army</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @army_units.each do |army_unit| %>
+      <tr>
+        <td><%= army_unit.unit.name %></td>
+        <td><%= army_unit.army.name %></td>
+        <td><%= link_to 'Show', army_unit %></td>
+        <td><%= link_to 'Edit', edit_army_unit_path(army_unit) %></td>
+        <td><%= link_to 'Destroy', army_unit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Army unit', new_army_unit_path %>

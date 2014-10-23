@@ -3,4 +3,8 @@ class Unit < ActiveRecord::Base
 
   belongs_to :faction
   belongs_to :unit_type
+
+  def to_s
+    name
+  end
 end
